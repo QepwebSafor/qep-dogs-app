@@ -4,7 +4,7 @@ import { ImageB, Favourite, Breed } from "@/types/Image.interface";
 
 async function loadImages() {
   try {
-    const { data } = await api.get<ImageB[]>("/images/search?limit=30");
+    const { data } = await api.get<ImageB[]>("/images/search?limit=20");
     await  new Promise((resolve)=> setTimeout(resolve, 3000))
     return data;
   } catch (error) {
