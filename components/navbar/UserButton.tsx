@@ -44,12 +44,6 @@ const UserButton: React.FC<UserButtonProps> = ({ user }) => {
           <DropdownMenuSeparator />
           <DropdownMenuGroup>
             
-          {/*   <DropdownMenuItem asChild>
-              <Link href="/admin/profile">
-                <UserRound className="mr-2 h-4 w-4" />
-                <span>Profile</span>
-              </Link>
-            </DropdownMenuItem> */}
             <DropdownMenuItem asChild>
               <Link href="/admin/settings">
                 <Settings className="mr-2 h-4 w-4 "/>
@@ -83,13 +77,7 @@ const UserButton: React.FC<UserButtonProps> = ({ user }) => {
                     Administrador
                   </Link>
                 </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <Link href="/admin/dashboard">
-                    <Lock className="mr-2 h-4 w-4" />
-                    Panel de control
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
+                   <DropdownMenuItem asChild>
                   <Link href="/admin/users">
                     <Lock className="mr-2 h-4 w-4" />
                     Usuarios
