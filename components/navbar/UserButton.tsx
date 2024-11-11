@@ -71,12 +71,7 @@ const UserButton: React.FC<UserButtonProps> = ({ user }) => {
             </DropdownMenuItem>
             {user.role === "ADMIN" && (
               <>
-                <DropdownMenuItem asChild>
-                  <Link href="/admin">
-                    <Lock className="mr-2 h-4 w-4" />
-                    Administrador
-                  </Link>
-                </DropdownMenuItem>
+     
                    <DropdownMenuItem asChild>
                   <Link href="/admin/users">
                     <Lock className="mr-2 h-4 w-4" />
@@ -92,7 +87,7 @@ const UserButton: React.FC<UserButtonProps> = ({ user }) => {
               </>
             )}
           </DropdownMenuGroup>
-          <DropdownMenuSeparator />
+          
           <DropdownMenuItem asChild>
             <div
                onClick={() => {
