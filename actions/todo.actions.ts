@@ -1,10 +1,10 @@
 "use server";
 
 import { ITodo } from "@/interfaces";
-import { PrismaClient } from "@prisma/client";
+import { db } from "@/lib/db";
 import { revalidatePath } from "next/cache";
 
-const prisma = new PrismaClient();
+
 
 /**
  * Retrieves the todo list for a specific user.
@@ -21,7 +21,7 @@ export const getUserTodoListAction = async ({
   userId: string | null;
 }): Promise<Array<ITodo>> => {
   try {
-    return await prisma.todo.findMany({
+    return await db.todo.findMany({
       where: {
         user_id: userId as string,
       },
@@ -58,7 +58,7 @@ export const createTodoAction = async ({
   userId: string | null;
 }): Promise<void> => {
   try {
-    await prisma.todo.create({
+    await db.todo.create({
       data: {
         title,
         body,
@@ -86,7 +86,7 @@ export const deleteTodoAction = async ({
 }: {
   id: string;
 }): Promise<void> => {
-  await prisma.todo.delete({
+  await db.todo.delete({
     where: {
       id,
     },
@@ -114,7 +114,7 @@ export const updateTodoAction = async ({
   completed,
 }: ITodo): Promise<void> => {
   try {
-    await prisma.todo.update({
+    await db.todo.update({
       where: {
         id,
       },
